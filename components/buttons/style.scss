@@ -1,0 +1,36 @@
+.button{
+    outline: 0;
+    border:none;
+    border-radius:100px;
+    cursor: pointer;
+    padding: 12px 24px;
+    color: black;    
+    
+    &.wide{
+        padding: 12px 80px;
+        font-size: 14px;
+    }
+
+    &.small{
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    &.colored-button{
+        background: #e62e2e;
+        color: white;
+        box-shadow: 0 4px 20px #e62e2e;
+    }
+
+    &.border-button{
+        background: transparent;
+       
+        &.white{
+            border: 2px solid white;
+            color: white;
+        }
+    }
+}
+
+
+
