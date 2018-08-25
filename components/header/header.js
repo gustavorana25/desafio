@@ -4,7 +4,7 @@ import './style.scss'
 
 const Header = () => (
     <header className="general-header">
-        
+        <Link className="login" href="/login">login</Link>
     </header>
 )
 

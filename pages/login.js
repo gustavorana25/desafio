@@ -1,4 +1,16 @@
-export default () =>
-    <div class="loginPage">
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import withReduxSaga from 'next-redux-saga'
 
-    </div>
+import Login from '../components/login/login'
+import Header from '../components/header/header'
+
+class LoginPage extends Component {
+    render() {
+        return (
+            <Login />
+        )
+    }
+}
+
+export default LoginPage;
