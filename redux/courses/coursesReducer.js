@@ -1,14 +1,22 @@
+import { FETCH_COURSES_SUCCESS, FETCH_COURSES_ERROR } from './coursesActions'
+
 const defaultState = {
-    listOfCourses: []
+    all: []
 };
 
-export const coursesReducer = (state = defaultState, action) => {
+const coursesReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case "UPDATE_LIST":
+      case FETCH_COURSES_SUCCESS:
         return {
             ...state,
-            viewType: action.list
+            all: action.courses
         };
+      case FETCH_COURSES_ERROR:
+        return {
+            ...state,
+            error: action.error
+        };
+    
 
     default:
         return state;

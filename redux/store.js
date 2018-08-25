@@ -1,9 +1,22 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 
-import coursesReducer from './courses/coursesReducer';
+import allReducers from './allReducers'
+import allSaga from './allSaga'
 
-const store = createStore(combineReducers({
-    courses: coursesReducer
-}));
+const sagaMiddleware = createSagaMiddleware()
 
-export default store;
+function configureStore(initialState) {
+    const store = createStore(
+        allReducers,
+        initialState,
+        applyMiddleware(sagaMiddleware)
+    )
+    store.runSagaTask = () => {
+        store.sagaTask = sagaMiddleware.run(allSaga)
+    }
+    store.runSagaTask()
+    return store
+}
+
+export default configureStore

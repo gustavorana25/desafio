@@ -1,15 +1,23 @@
-import ReduxWrapper from "../redux/ReduxWrapper"
-import { connect } from 'react-redux';
-import Header from  '../components/header'
-import BannerHome from  '../components/banner-home'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import withReduxSaga from 'next-redux-saga'
+import { asyncFetchCourses } from '../redux/courses/coursesSaga'
 
-const home = (props) =>{
-  return(
-    <div>
-      <Header />
-      <BannerHome />
-    </div>
-  )
+class Page extends Component {
+  static getInitialProps(props) {
+    const { store } = props.ctx
+    store.dispatch({ type: 'ASYNC_FETCH_COURSES' })
+  }
+  render() {
+    console.log(this.props);
+    return (
+      <div>
+        Home
+      </div>
+    )
+  }
 }
 
-export default ReduxWrapper(connect(state => state)(home));
+export default withReduxSaga({ async: true })(
+  connect(state => state)(Page)
+)
