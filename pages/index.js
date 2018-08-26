@@ -23,7 +23,6 @@ class Page extends Component {
         <BannerHome />
         <CourseList name="Novidades" courses={all.filter(elem => elem.id == 6)} />
         <AllCoursesList />
-        <AllTeachers />
       </div>
     )
   }
