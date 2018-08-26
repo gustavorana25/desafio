@@ -2,15 +2,20 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import withReduxSaga from 'next-redux-saga'
 
-import Login from '../components/login/login'
+import FormLogin from '../components/form-login/form-login'
 import Header from '../components/header/header'
 
 class LoginPage extends Component {
     render() {
         return (
-            <Login />
+            <div>
+                <Header />
+                <FormLogin />
+            </div>
         )
     }
 }
 
-export default LoginPage;
+export default withReduxSaga({ async: true })(
+    connect(state => state)(LoginPage)
+)

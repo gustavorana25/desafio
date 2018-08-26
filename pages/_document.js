@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <title>Sanarflix</title>
           <link
             rel='stylesheet'
             href='/_next/static/style.css'

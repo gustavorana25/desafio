@@ -12,5 +12,30 @@
     height: 80px;
     display: flex;
     align-items: center;
-    background: rgba(13,22,33,0.7);
+    background: #3076cc;
+    z-index: 99;
+
+    .max-content{
+        box-sizing: border-box;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+        margin-right: auto; 
+    }
+
+    a{
+        font-size: 16px;
+        color: white;
+        font-size: 16px;
+        padding: 10px
+    }
+}
+
+.page{
+    margin-top: 80px;
 }

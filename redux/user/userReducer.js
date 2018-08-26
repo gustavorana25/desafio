@@ -9,7 +9,7 @@ const userReducer = (state = defaultState, action) => {
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                user: action.user
+                user: { ...action.user}
             };
         case LOGIN_ERROR:
             return {
