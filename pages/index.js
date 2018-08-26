@@ -4,7 +4,6 @@ import withReduxSaga from 'next-redux-saga'
 
 import AllCoursesList from '../components/all-courses-list/all-courses-list'
 import CourseList from '../components/course-list/course-list'
-import AllTeachers from '../components/all-teachers/all-teachers'
 import BannerHome from '../components/banner-home/banner-home'
 import Header from '../components/header/header'
 
